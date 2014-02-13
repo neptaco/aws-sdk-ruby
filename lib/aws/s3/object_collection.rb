@@ -287,7 +287,7 @@ module AWS
       def each_member_in_page(page, &block)
         super
         page.contents.each do |content|
-          yield(S3Object.new(bucket, content.key))
+          yield(S3Object.new(bucket, content.key, content: content))
         end
       end
 
